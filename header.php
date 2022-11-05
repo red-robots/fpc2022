@@ -1,187 +1,99 @@
-<?php
-/**
- * Header file for the Twenty Twenty WordPress default theme.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
- */
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.1.0/swiper-bundle.css">
+<?php if ( is_singular(array('post')) ) { 
+global $post;
+$post_id = $post->ID;
+$thumbId = get_post_thumbnail_id($post_id); 
+$featImg = wp_get_attachment_image_src($thumbId,'full'); ?>
+<!-- SOCIAL MEDIA META TAGS -->
+<meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
+<meta property="og:url"		content="<?php echo get_permalink(); ?>" />
+<meta property="og:type"	content="article" />
+<meta property="og:title"	content="<?php echo get_the_title(); ?>" />
+<meta property="og:description"	content="<?php echo (get_the_excerpt()) ? strip_tags(get_the_excerpt()):''; ?>" />
+<?php if ($featImg) { ?>
+<meta property="og:image"	content="<?php echo $featImg[0] ?>" />
+<?php } ?>
+<!-- end of SOCIAL MEDIA META TAGS -->
+<?php } ?>
+<script>
+var siteURL = '<?php echo get_site_url();?>';
+var currentURL = '<?php echo get_permalink();?>';
+var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
+</script>
+<?php wp_head(); ?>
+</head>
+<?php 
+$extraClass = '';
+if(is_page()) {
+  $extraClass .= (get_field('header_image')) ? ' has-banner':' no-banner';
+}
+$topNavs = get_field("topNavs","option"); 
+?>
+<body <?php body_class($extraClass);?>>
+<div id="page" class="site cf">
+	<div id="overlay"></div>
+	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
 
-?><!DOCTYPE html>
+	<header id="masthead" class="site-header" role="banner">
+		<div class="wrapper wide">
+      <div class="flexwrap">
+  			<div id="site-logo">
+          <?php if( get_custom_logo() ) { ?>
+            <?php the_custom_logo(); ?>
+          <?php } else { ?>
+            <h1 class="logo"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+          <?php } ?>
+  			</div>
 
-<html class="no-js" <?php language_attributes(); ?>>
+        <a class="mobile-menu" id="menutoggle" href="javascript:void(0)"><span class="bar"></span><i>Menu</i></a>
 
-	<head>
+        <?php if ( has_nav_menu( 'primary' ) ||  $topNavs ) { ?>
+        <div id="site-navigation">
 
-		<meta charset="<?php bloginfo( 'charset' ); ?>">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+          <?php if ( $topNavs ) { ?>
+          <nav id="topnav" class="topnav">
+            <ul class="menu">
+            <?php foreach ($topNavs as $n) { 
+              if( $n['link'] ) { 
+                $a = $n['link'];
+                $target = ( isset($a['target']) && $a['target'] ) ? $a['target'] : '_self';
+                $icon = ($n['icon']) ? $n['icon'] : '';
+                $hasIcon = ($icon) ? 'has-icon':'no-icon';
+                ?>
+                <li class="top-link <?php echo $hasIcon ?>"><a href="<?php echo $a['url'] ?>" target="<?php echo $target ?>"><?php echo $icon ?><?php echo $a['title'] ?></a></li>
+              <?php } ?>
+            <?php } ?>
+            </ul>
+          </nav>
+          <?php } ?>
 
-		<link rel="profile" href="https://gmpg.org/xfn/11">
+          <?php if ( has_nav_menu( 'primary' ) ) { ?>
+    			<nav id="navigation" class="main-navigation animated fadeIn" role="navigation">
+            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=>false, 'menu_id' => 'primary-menu') ); ?>
+          </nav>
+          <?php } ?>
 
-		<?php wp_head(); ?>
+          <span id="closeMobileNav"></span>
+        </div>
+        <?php } ?>
+      
+  		</div>
+    </div>	
+	</header>
 
-	</head>
+	<?php get_template_part('parts/hero'); ?>
 
-	<body <?php body_class(); ?>>
-
-		<?php
-		wp_body_open();
-		?>
-
-		<header id="site-header" class="header-footer-group">
-
-			<div class="header-inner section-inner">
-
-				<div class="header-titles-wrapper">
-
-					<?php
-
-					// Check whether the header search is activated in the customizer.
-					$enable_header_search = get_theme_mod( 'enable_header_search', true );
-
-					if ( true === $enable_header_search ) {
-
-						?>
-
-						<button class="toggle search-toggle mobile-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
-							<span class="toggle-inner">
-								<span class="toggle-icon">
-									<?php fpcconcord_the_theme_svg( 'search' ); ?>
-								</span>
-								<span class="toggle-text"><?php _ex( 'Search', 'toggle text', 'fpcconcord' ); ?></span>
-							</span>
-						</button><!-- .search-toggle -->
-
-					<?php } ?>
-
-					<div class="header-titles">
-
-						<?php
-							// Site title or logo.
-							fpcconcord_site_logo();
-
-							// Site description.
-							fpcconcord_site_description();
-						?>
-
-					</div><!-- .header-titles -->
-
-					<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
-						<span class="toggle-inner">
-							<span class="toggle-icon">
-								<?php fpcconcord_the_theme_svg( 'ellipsis' ); ?>
-							</span>
-							<span class="toggle-text"><?php _e( 'Menu', 'fpcconcord' ); ?></span>
-						</span>
-					</button><!-- .nav-toggle -->
-
-				</div><!-- .header-titles-wrapper -->
-
-				<div class="header-navigation-wrapper">
-
-					<?php
-					if ( has_nav_menu( 'primary' ) || ! has_nav_menu( 'expanded' ) ) {
-						?>
-
-							<nav class="primary-menu-wrapper" aria-label="<?php echo esc_attr_x( 'Horizontal', 'menu', 'fpcconcord' ); ?>">
-
-								<ul class="primary-menu reset-list-style">
-
-								<?php
-								if ( has_nav_menu( 'primary' ) ) {
-
-									wp_nav_menu(
-										array(
-											'container'  => '',
-											'items_wrap' => '%3$s',
-											'theme_location' => 'primary',
-										)
-									);
-
-								} elseif ( ! has_nav_menu( 'expanded' ) ) {
-
-									wp_list_pages(
-										array(
-											'match_menu_classes' => true,
-											'show_sub_menu_icons' => true,
-											'title_li' => false,
-											'walker'   => new fpcconcord_Walker_Page(),
-										)
-									);
-
-								}
-								?>
-
-								</ul>
-
-							</nav><!-- .primary-menu-wrapper -->
-
-						<?php
-					}
-
-					if ( true === $enable_header_search || has_nav_menu( 'expanded' ) ) {
-						?>
-
-						<div class="header-toggles hide-no-js">
-
-						<?php
-						if ( has_nav_menu( 'expanded' ) ) {
-							?>
-
-							<div class="toggle-wrapper nav-toggle-wrapper has-expanded-menu">
-
-								<button class="toggle nav-toggle desktop-nav-toggle" data-toggle-target=".menu-modal" data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle">
-									<span class="toggle-inner">
-										<span class="toggle-text"><?php _e( 'Menu', 'fpcconcord' ); ?></span>
-										<span class="toggle-icon">
-											<?php fpcconcord_the_theme_svg( 'ellipsis' ); ?>
-										</span>
-									</span>
-								</button><!-- .nav-toggle -->
-
-							</div><!-- .nav-toggle-wrapper -->
-
-							<?php
-						}
-
-						if ( true === $enable_header_search ) {
-							?>
-
-							<div class="toggle-wrapper search-toggle-wrapper">
-
-								<button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false">
-									<span class="toggle-inner">
-										<?php fpcconcord_the_theme_svg( 'search' ); ?>
-										<span class="toggle-text"><?php _ex( 'Search', 'toggle text', 'fpcconcord' ); ?></span>
-									</span>
-								</button><!-- .search-toggle -->
-
-							</div>
-
-							<?php
-						}
-						?>
-
-						</div><!-- .header-toggles -->
-						<?php
-					}
-					?>
-
-				</div><!-- .header-navigation-wrapper -->
-
-			</div><!-- .header-inner -->
-
-			<?php
-			// Output the search modal (if it is activated in the customizer).
-			if ( true === $enable_header_search ) {
-				get_template_part( 'template-parts/modal-search' );
-			}
-			?>
-
-		</header><!-- #site-header -->
-
-		<?php
-		// Output the menu modal.
-		get_template_part( 'template-parts/modal-menu' );
+	<div id="content" class="site-content">

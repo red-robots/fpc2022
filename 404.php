@@ -1,36 +1,39 @@
 <?php
 /**
- * The template for displaying the 404 template in the Twenty Twenty theme.
+ * The template for displaying 404 pages (not found).
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package bellaworks
  */
 
-get_header();
-?>
+$title = get_field("title404","option");
+$content = get_field("content404","option");
+get_header(); ?>
 
-<main id="site-content">
+<div id="primary" class="content-area default-template page404">
+  <main id="main" class="site-main">
 
-	<div class="section-inner thin error404-content">
+    <header class="entry-title">
+      <div class="wrapper">
+        <div class="small-title">404 ERROR</div>
+        <h1 class="page-title"><?php esc_html_e( 'Page Not Found!', 'bellaworks' ); ?> <!-- <span class="smiley"> ¯\_(ツ)_/¯ </span> --></h1>
+      </div>
+    </header>
 
-		<h1 class="entry-title"><?php _e( 'Page Not Found', 'fpcconcord' ); ?></h1>
+    <section class="entry-content content404">
+      <div class="wrapper">
+        <div class="innerText">
+          <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below.', 'bellaworks' ); ?></p>
+          <div id="sitemap-wrap">
+            <?php wp_nav_menu( array( 'theme_location' => 'sitemap', 'menu_id' => 'sitemap','container_class'=>'sitemap-links') ); ?>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<div class="intro-text"><p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'fpcconcord' ); ?></p></div>
-
-		<?php
-		get_search_form(
-			array(
-				'aria_label' => __( '404 not found', 'fpcconcord' ),
-			)
-		);
-		?>
-
-	</div><!-- .section-inner -->
-
-</main><!-- #site-content -->
-
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+  </main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_footer();

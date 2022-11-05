@@ -1,55 +1,56 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the opening of the #site-footer div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
- */
+	</div><!-- #content -->
+	
+  <?php 
+  $footer_logo = get_field("footer_logo","option");
+  $social_media = get_social_media();
+  ?>
+  <footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="wrapper wide">
+      <div class="flexwrap">
+        <?php if ($footer_logo) { ?>
+        <div class="footer-widget foot-logo">
+         <img src="<?php echo $footer_logo['url'] ?>" alt="<?php echo $footer_logo['title'] ?>" class="footlogo"> 
+        </div>
+        <?php } ?>
 
-?>
-			<footer id="site-footer" class="header-footer-group">
+        <?php if ( has_nav_menu( 'footer' ) ) { ?>
+        <nav id="footer-navigation" class="footer-widget footer-navigation" role="navigation">
+          <?php wp_nav_menu( array( 'theme_location' => 'footer', 'container'=>false, 'menu_id' => 'footer-menu') ); ?>
+          <?php if ( $topNavs = get_field("topNavs","option") ) { ?>
+          <ul class="menu other">
+          <?php foreach ($topNavs as $n) { 
+            if( $n['link'] ) { 
+              $a = $n['link'];
+              $target = ( isset($a['target']) && $a['target'] ) ? $a['target'] : '_self';
+              $icon = ($n['icon']) ? $n['icon'] : '';
+              $hasIcon = ($icon) ? 'has-icon':'no-icon';
+              ?>
+              <li class="foot-link <?php echo $hasIcon ?>"><a href="<?php echo $a['url'] ?>" target="<?php echo $target ?>"><?php echo $icon ?><?php echo $a['title'] ?></a></li>
+            <?php } ?>
+          <?php } ?>
+          </ul>
+          <?php } ?>
+        </nav>
+        <?php } ?>
 
-				<div class="section-inner">
+        <div class="footer-widget foot-contact">
+          
+        </div>
 
-					<div class="footer-credits">
-
-						<p class="footer-copyright">&copy;
-							<?php
-							echo date_i18n(
-								/* translators: Copyright date format, see https://www.php.net/manual/datetime.format.php */
-								_x( 'Y', 'copyright date format', 'fpcconcord' )
-							);
-							?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						</p><!-- .footer-copyright -->
-
-					</div><!-- .footer-credits -->
-
-					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'To the top %s', 'fpcconcord' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-long -->
-						<span class="to-the-top-short">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'Up %s', 'fpcconcord' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-short -->
-					</a><!-- .to-the-top -->
-
-				</div><!-- .section-inner -->
-
-			</footer><!-- #site-footer -->
-
-		<?php wp_footer(); ?>
-
-	</body>
+        <?php if ($social_media) { ?>
+        <div class="social-media">
+          <?php foreach ($social_media as $m) { ?>
+            <a href="<?php echo $m['url'] ?>" target="_blank" aria-label="<?php echo $m['type'] ?>"><i class="<?php echo $m['icon'] ?>"></i></a>
+          <?php } ?>
+        </div>
+        <?php } else { ?>
+          <div class="social-media nolinks">&nbsp;</div>
+        <?php } ?>
+      </div>
+    </div>
+	</footer><!-- #colophon -->
+	
+</div><!-- #page -->
+<?php wp_footer(); ?>
+</body>
 </html>
