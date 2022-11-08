@@ -300,6 +300,7 @@ h6 {
   }
   ul.menu > li {
     float: left;
+    position: relative;
   }
   ul.menu > li > a {
     text-transform: uppercase;
@@ -328,6 +329,19 @@ h6 {
       width: calc(100% - 34px);
       opacity: 1;
     }
+  }
+  ul.menu ul {
+    display: none;
+    width: 250px;
+    background: #FFF;
+    margin: 0 0;
+    padding: 0 0;
+    list-style: none;
+    position: absolute;
+    left: 0;
+  }
+  ul.menu li.menu-item-has-children:hover > ul {
+    display: block;
   }
 }
 

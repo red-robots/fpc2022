@@ -1359,10 +1359,12 @@ h6{font-size:1rem;font-weight:normal;line-height:1.1}
 .slider .textwrap .wrap{text-align:center;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 #site-navigation ul.menu{margin:0;padding:0;list-style:none;display:inline-block;float:right}
 #site-navigation ul.menu a{display:inline-block;color:#591929;text-decoration:none}
-#site-navigation ul.menu>li{float:left}
+#site-navigation ul.menu>li{float:left;position:relative}
 #site-navigation ul.menu>li>a{text-transform:uppercase;font-family:"Ubuntu",sans-serif;font-size:14px;font-weight:normal;padding:0 17px;position:relative}
 #site-navigation ul.menu>li>a:after{content:"";display:block;width:0;height:2px;background:#c1c56a;position:absolute;left:17px;bottom:-2px;opacity:0;-webkit-transition:all ease .3s;transition:all ease .3s}
 #site-navigation ul.menu>li.current_page_item>a:after,#site-navigation ul.menu>li:hover>a:after{width:calc(100% - 34px);opacity:1}
+#site-navigation ul.menu ul{display:none;width:250px;background:#fff;margin:0;padding:0;list-style:none;position:absolute;left:0}
+#site-navigation ul.menu li.menu-item-has-children:hover>ul{display:block}
 .wp-block-columns{max-width:1200px;width:100%;margin:0 auto;padding-left:15px;padding-right:15px}
 .wp-block-columns.alignwide{max-width:80%}
 .wp-block-columns.alignfull{max-width:100%;padding-left:0;padding-right:0}
