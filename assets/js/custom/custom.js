@@ -59,4 +59,52 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  if( $('a.popup').length ) {
+    $('a.popup').each(function(){
+      var target = $(this);
+      var link = $(this).attr('href');
+      if( link.includes('youtu') ) {
+        target.addClass('video-link');
+      }
+    });
+  }
+
+  Fancybox.bind(".popup", {
+    Image: {
+      Panzoom: {
+        zoomFriction: 0.7,
+        maxScale: function () {
+          return 5;
+        },
+      },
+    },
+    Html: {
+      video: {
+        autoplay: true,
+      },
+    },
+  });
+
+
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:0,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:4,
+            nav:false
+        },
+        1000:{
+            items:6,
+            nav:true,
+            loop:false
+        }
+    }
+  })
+
 }); 

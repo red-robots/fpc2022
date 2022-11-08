@@ -1,3 +1,4 @@
+@import url('https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css');
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
 	overflow-wrap: normal;
     word-wrap: normal;
@@ -58,6 +59,37 @@ a {
     color: tint($blue,20%);
 	}
 }
+h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  line-height: 1.1;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 1.1;
+}
+h3 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 1.1;
+}
+h4 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 1.1;
+}
+h5 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  line-height: 1.1;
+}
+h6 {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.1;
+}
+.letter-space {letter-spacing:1px;}
 .cf:before, .cf:after {
     content: " "; 
     display: table; 
@@ -144,9 +176,10 @@ a {
 .swiper,
 .swiper-wrapper,
 .swiper-slide {
-  height: 80vh;
+  height: 70vh;
 }
 .slider {
+  overflow: hidden;
   .swiper-slide {
     position: relative;
     height: 100%;
@@ -158,7 +191,7 @@ a {
     top: 0;
     left: 0;
     background: {
-      size: 100%;
+      size: cover;
       color: #545454;
       repeat:no-repeat;
       position: center;
@@ -198,10 +231,11 @@ a {
       }
     }
     .slideHeading {
-      font-size: 3.5em;
-      font-weight: 500;
+      font-size: 4em;
+      font-weight: 600;
       line-height: 1.1;
       text-transform: uppercase;
+      text-shadow: 0 3px 5px rgba(0,0,0,0.25);
       margin:0 0 15px;
     }
     .slideDetails {
@@ -213,7 +247,7 @@ a {
       display: inline-block;
       text-decoration: none;
       background: $secondary;
-      padding: 10px 20px;
+      padding: 8px 22px;
       color: #FFF;
       font-size: 20px;
       line-height: 1.1;
@@ -269,6 +303,7 @@ a {
   }
   ul.menu > li > a {
     text-transform: uppercase;
+    font-family: $font_secondary;
     font-size: 14px;
     font-weight: normal;
     padding: 0 17px;
@@ -296,9 +331,9 @@ a {
   }
 }
 
-.wp-block-cover.alignfull {
-  padding: 0 0;
-}
+// .wp-block-cover.alignfull {
+//   padding: 0 0;
+// }
 .wp-block-columns {
   max-width: $wrapper;
   width: 100%;
@@ -315,9 +350,254 @@ a {
   }
 }
 
+.overlay-white {
+  padding: 50px 0;
+  &:before {
+    content: "";
+    display: block;
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+    background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+  }
+  .wp-block-cover__inner-container {
+    position: relative;
+    z-index: 10;
+  }
+  .video {
+    figure {
+      margin: 0 0 20px;
+      padding: 5px;
+      border:2px solid $lime;
+    }
+  }
+}
+
+.wp-block-column.innerpad {
+  padding: 20px;
+}
+
+.video-link {
+  display: inline-block;
+  position: relative;
+  &:before, &:after {
+    content:"";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: all ease .3s;
+  }
+  &:before {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border: 2px solid #FFF;
+    background-color: rgba(255,255,255,.15);
+    transform: translateX(-50%) translateY(-50%);
+    box-shadow: 0 19px 31px rgba(0,0,0,0.1);
+  }
+  &:after {
+    width: 0;
+    height: 0;
+    border-left: 30px solid #FFF;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    transform: translateX(-35%) translateY(-50%);
+  }
+  &:hover {
+    &:before {
+      background-color: rgba(255,255,255,.35);
+    }
+  }
+}
+
+.home-carousel {
+  max-width: $wrapper;
+  width: 100%;
+  margin:0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+  .item {
+    padding: 8px;
+    overflow: hidden;
+    a {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      @include backgroundImage(center);
+      // transform: scale(1.3);
+      box-shadow: 0 2px 7px rgba(0,0,0,0.2);
+      img {
+        width: 100%;
+        height: auto;
+        float: left;
+      }
+    }
+  }
+  .owl-nav {display:none!important;}
+  .owl-carousel .owl-item {margin-right:0!important;}
+
+  .carousel-title {
+    margin: 50px 0 30px;
+  }
+  .social-handle-link {
+    @include flexgroup();
+    @include flexbox-justify(center);
+    @include flexbox-align-items(center);
+    position: relative;
+    text-decoration: none;
+    img {
+      width: 70px;
+      height: auto;
+      margin-right: 15px;
+    }
+    span {
+      color: $primary;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1;
+      text-decoration: none;
+    }
+    &:hover span {
+      color: $secondary;
+    }
+  }
+
+  .owl-dots {
+    text-align: center;
+    .owl-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #CCC;
+      border-radius:100px;
+      margin: 5px;
+      padding: 0 0!important;
+      &.active {
+        background: $secondary;
+      }
+    }
+  }
+}
+
+.footer-widget .sign-up-info {
+  text-align: center;
+  margin-bottom: 0;
+  margin-bottom: 30px;
+  @include tab {
+    text-align: left;
+    margin-bottom: 0;
+  }
+}
+
+.footer-widget .widgettext {
+  margin-bottom: 30px;
+  text-align: center;
+  @include tab {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  a.signupBtn {
+    position: relative;
+    z-index: 10;
+    color: $primary;
+    display: inline-block;
+    text-decoration: none;
+    background: #FFF!important;
+    padding: 4px 35px;
+    opacity: 1!important;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+} 
+
 /* FOOTER */
 .site-footer {
   background: $primary;
   color: #FFF;
   font-size: 13px;
+  .wrapper {
+    padding-top: 50px;
+    padding-bottom: 50px
+  }
+}
+.footer-widget {
+  width: 100%;
+  &.foot-logo {
+    @include tab {
+      padding-right: 5vw;
+    }
+    img {
+      width: 150px;
+      height: auto;
+    }
+  }
+  @include tab {
+    width: 25%;
+  }
+  .widgettitle {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-align: center;
+    @include tab {
+      text-align: left;
+    }
+  }
+
+  .widgettext {
+    line-height: 1.8;
+    p {
+      opacity: 0.75;
+    }
+    ul {
+      margin: 0 0;
+      padding: 0 0;
+      list-style: none;
+      text-transform: uppercase;
+      li {
+        margin: 0 0 4px;
+      }
+    }
+    a {
+      display: inline-block;
+      color: #FFF;
+      text-decoration: none;
+      opacity: 0.75;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+
+  .social-media {
+    @include flexgroup();
+    @include flexbox-align-items(flex-start);
+    @include flexbox-justify(flex-start);
+    a {
+      @include flexgroup();
+      @include flexbox-align-items(center);
+      @include flexbox-justify(center);
+      margin: 0 5px;
+      font-size: 0.7rem;
+      line-height: 1;
+      text-decoration: none;
+      border-radius: 100px;
+      background: #FFF;
+      color: $primary;
+      width: 25px;
+      height: 25px;
+      opacity: 1;
+    }
+  }
 }

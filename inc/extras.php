@@ -151,12 +151,12 @@ function get_social_media() {
 
 function social_icons() {
     $social_types = array(
-        'facebook'  => 'fa fa-facebook-square',
-        'twitter'   => 'fab fa-twitter-square',
-        'linkedin'  => 'fa fa-linkedin-square',
-        'instagram' => 'fab fa-instagram-square',
-        'youtube'   => 'fab fa-youtube-square',
-        'vimeo'     => 'fab fa-vimeo-square',
+        'facebook'  => 'fa fa-facebook',
+        'twitter'   => 'fab fa-twitter',
+        'linkedin'  => 'fa fa-linkedin',
+        'instagram' => 'fab fa-instagram',
+        'youtube'   => 'fab fa-youtube',
+        'vimeo'     => 'fab fa-vimeo',
     );
     return $social_types;
 }
@@ -429,3 +429,86 @@ add_filter( 'use_block_editor_for_post_type', 'ea_disable_gutenberg', 10, 2 );
 // add_action( 'admin_head', 'ea_disable_classic_editor' );
 
 
+add_shortcode( 'display_carousel', 'display_carousel_func' );
+function display_carousel_func( $atts ) {
+  // $a = shortcode_atts( array(
+  //   'numcol'=>6
+  // ), $atts );
+  // $numcol = ($a['numcol']) ? $a['numcol'] : 6;
+  $output = '';
+  ob_start();
+  $icon = get_field('sm_icon');
+  $link = get_field('sm_handle');
+  $smTitle = (isset($link['title']) && $link['title']) ? $link['title'] : '';
+  $smLink = (isset($link['url']) && $link['url']) ? $link['url'] : ''; 
+  if($smLink=='#') {
+    $smLink = 'javascript:void(0)';
+  }
+
+  if( $carousel = get_field('carousel') ) { ?>
+  <div class="home-carousel">
+    <?php if ($smTitle && $smLink) { ?>
+    <div class="carousel-title">
+      <a href="<?php echo $smLink ?>" target="_blank" class="social-handle-link"><?php if ($icon) { ?><img src="<?php echo $icon['url'] ?>" alt="<?php echo $icon['title'] ?>"><?php } ?><span><?php echo $smTitle ?></span></a>
+    </div> 
+    <?php } ?>
+    <div class="owl-carousel owl-theme">  
+      <?php foreach($carousel as $c) { 
+        $website_url = get_field('website_url',$c['ID']);
+        $pageLink = ($website_url) ? $website_url : 'javascript:void(0)';
+        $target = ($website_url) ? '_blank':'_self';
+        $image = ($c['sizes']['large']) ? $c['sizes']['large'] : '';
+        $imageStyle = ($image) ? 'style="background-image:url('.$image.')"':'';
+        if($pageLink=='#') {
+          $pageLink = 'javascript:void(0)';
+          $target = '_self';
+        }
+        ?>
+        <div class="item">
+          <a href="<?php echo $pageLink ?>" target="<?php echo $target ?>" <?php echo $imageStyle ?>><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/square.png" alt="" class="helper"></a>
+        </div>
+      <?php } ?>
+    </div>
+  </div>
+  <?php }
+  $output = ob_get_contents();
+  ob_end_clean();
+  return $output;
+}
+
+add_shortcode( 'sign_ups', 'sign_ups_func' );
+function sign_ups_func($atts) {
+  $output = '';
+  $sign_up = get_field('signup_button','option');
+  ob_start();
+  if ($sign_up) { 
+    $title = $sign_up['title'];
+    $link = $sign_up['url'];
+    $target = (isset($sign_up['target']) && $sign_up['target']) ? '_blank':'_self';
+    if($link && $title) { ?>
+    <div class="sign-up-info">
+     <a href="<?php echo $link ?>" target="<?php echo $target ?>" class="signupBtn"><?php echo $title ?></a>
+    </div>
+    <?php } 
+  } 
+  $output = ob_get_contents();
+  ob_end_clean();
+  return $output;
+}
+
+add_shortcode( 'social_media', 'get_social_media_html' );
+function get_social_media_html($atts) {
+  $output = '';
+  ob_start();
+  $social_media = get_social_media();
+  if ($social_media) { ?>
+  <div class="social-media">
+    <?php foreach ($social_media as $m) { ?>
+      <a href="<?php echo $m['url'] ?>" target="_blank" aria-label="<?php echo $m['type'] ?>"><i class="<?php echo $m['icon'] ?>"></i></a>
+    <?php } ?>
+  </div>
+  <?php } 
+  $output = ob_get_contents();
+  ob_end_clean();
+  return $output;
+}

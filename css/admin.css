@@ -12,3 +12,6 @@
 .wp-block[data-align='full'] {
     max-width: 100%!important;
 }
+.wp-block.innerpad {
+  padding: 20px;
+}
