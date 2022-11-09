@@ -1401,6 +1401,10 @@ h6{font-size:1rem;font-weight:normal;line-height:1.1}
 .footer-widget .sign-up-info{text-align:center;margin-bottom:0;margin-bottom:30px}
 .footer-widget .widgettext{margin-bottom:30px;text-align:center}
 .footer-widget .widgettext a.signupBtn{position:relative;z-index:10;color:#591929;display:inline-block;text-decoration:none;background:#fff !important;padding:4px 35px;opacity:1 !important;font-size:1.1em;font-weight:500;margin-bottom:12px}
+body.subpage{font-size:1em;line-height:1.6}
+body.subpage #primary{padding-top:20px}
+.entry-content{max-width:1200px;width:100%;min-height:20em;margin:0 auto 50px;padding-left:15px;padding-right:15px}
+.entry-content .wrapper{padding-left:0;padding-right:0}
 .site-footer{background:#591929;color:#fff;font-size:13px}
 .site-footer .wrapper{padding-top:50px;padding-bottom:50px}
 .footer-widget{width:100%}
@@ -1421,6 +1425,7 @@ h6{font-size:1rem;font-weight:normal;line-height:1.1}
 .footer-widget .sign-up-info{text-align:left;margin-bottom:0}
 .footer-widget .widgettext{text-align:left;margin-bottom:0}
 body.logged-in.admin-bar .site-header{top:32px}
+body.subpage .site-header{-webkit-box-shadow:0 2px 10px rgba(0,0,0,.05);box-shadow:0 2px 10px rgba(0,0,0,.05)}
 .footer-widget.foot-logo{padding-right:5vw}
 .footer-widget{width:25%}
 .footer-widget .widgettitle{text-align:left}

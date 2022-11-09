@@ -814,6 +814,32 @@ body.logged-in.admin-bar {
   }
 }
 
+body.subpage {
+  font-size: 1em;
+  line-height: 1.6;
+  #primary {
+    padding-top: 20px
+  }
+  @include tab {
+    .site-header {
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    }
+  }
+}
+
+.entry-content {
+  max-width: $wrapper;
+  width: 100%;
+  min-height: 20em;
+  margin: 0 auto 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  .wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /* FOOTER */
 .site-footer {
   background: $primary;
