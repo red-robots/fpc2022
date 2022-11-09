@@ -447,9 +447,9 @@ h6 {
         display: none!important;
         width: 100%;
         a {
-          font-size: 1.2em;
+          font-size: 1em;
           line-height: 1.1;
-          padding: 10px 20px 10px 25px;
+          padding: 12px 20px 12px 25px;
         }
       }
     }
@@ -502,6 +502,10 @@ h6 {
     ul.menu > li.open-dropdown > ul.sub-menu {
       display: block!important;
       position: relative;
+      opacity: 1!important;
+      z-index: 10000!important;
+      padding-top: 10px!important;
+      padding-bottom: 10px!important;
     }
     ul.menu>li>a:after {display:none!important;}
     &.active {
@@ -798,8 +802,14 @@ body.logged-in.admin-bar {
     }
   }
   @include max($tabwidth) {
+    &.mobile-menu-open {
+      padding-top: 0;
+    }
+    #site-navigation:before {
+      top: 46px;
+    }
     #site-navigation #navigation > ul.menu {
-      padding-top: 17vh;
+      padding-top: 130px;
     }
   }
 }
