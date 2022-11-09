@@ -18,7 +18,7 @@
               <?php if ($slideText || $slideTitle) { ?>
               <div class="slide-text animated">
                 <div class="wrap">
-                  <div class="inline">
+                  <div class="inline animated fadeInUp">
                     <?php if ($slideTitle) { ?>
                      <h2 class="slideHeading"><?php echo $slideTitle ?></h2> 
                     <?php } ?>

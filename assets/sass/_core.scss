@@ -189,11 +189,12 @@ h6 {
     @include flexbox-justify(space-between);
   }
 }
-.slider,
-.swiper,
-.swiper-wrapper,
-.swiper-slide {
-  height: 70vh;
+.slider {
+  height: 92vh;
+}
+
+.swiper, .swiper-wrapper, .swiper-slide {
+  height: 100%;
 }
 .slider {
   overflow: hidden;
@@ -256,7 +257,7 @@ h6 {
       font-weight: 600;
       line-height: 1.1;
       text-transform: uppercase;
-      text-shadow: 0 3px 5px rgba(0,0,0,0.25);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.35);
       margin:0 0 15px;
       @include tab {
         font-size: 4em;
