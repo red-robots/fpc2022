@@ -1420,6 +1420,7 @@ h6{font-size:1rem;font-weight:normal;line-height:1.1}
 .slider .slide-text .slideHeading{font-size:4em}
 .footer-widget .sign-up-info{text-align:left;margin-bottom:0}
 .footer-widget .widgettext{text-align:left;margin-bottom:0}
+body.logged-in.admin-bar .site-header{top:32px}
 .footer-widget.foot-logo{padding-right:5vw}
 .footer-widget{width:25%}
 .footer-widget .widgettitle{text-align:left}

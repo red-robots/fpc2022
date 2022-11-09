@@ -792,6 +792,11 @@ body.mobile-menu-open {
 } 
 
 body.logged-in.admin-bar {
+  @include tab {
+    .site-header {
+      top: 32px;
+    }
+  }
   @include max($tabwidth) {
     #site-navigation #navigation > ul.menu {
       padding-top: 17vh;
