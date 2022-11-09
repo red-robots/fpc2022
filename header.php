@@ -56,8 +56,6 @@ $topNavs = get_field("topNavs","option");
           <?php } ?>
   			</div>
 
-        <a class="mobile-menu" id="menutoggle" href="javascript:void(0)"><span class="bar"></span><i>Menu</i></a>
-
         <?php if ( has_nav_menu( 'primary' ) ||  $topNavs ) { ?>
         <div id="site-navigation">
 
@@ -80,14 +78,16 @@ $topNavs = get_field("topNavs","option");
 
           <?php if ( has_nav_menu( 'primary' ) ) { ?>
     			<nav id="navigation" class="main-navigation animated fadeIn" role="navigation">
-            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=>false, 'menu_id' => 'primary-menu') ); ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=>false, 'menu_id' => 'primary-menu','link_before'=>'<span>','link_after'=>'</span><i>Arrow Down</i>') ); ?>
           </nav>
           <?php } ?>
 
           <span id="closeMobileNav"></span>
         </div>
         <?php } ?>
-      
+        
+        <span class="mobile-menu" id="menutoggle"><span class="bar"></span><i>Menu</i></span>
+
   		</div>
     </div>	
 	</header>

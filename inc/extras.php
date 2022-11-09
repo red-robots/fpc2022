@@ -464,9 +464,7 @@ function display_carousel_func( $atts ) {
           $target = '_self';
         }
         ?>
-        <div class="item">
-          <a href="<?php echo $pageLink ?>" target="<?php echo $target ?>" <?php echo $imageStyle ?>><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/square.png" alt="" class="helper"></a>
-        </div>
+        <div class="item"><a href="<?php echo $pageLink ?>" target="<?php echo $target ?>" <?php echo $imageStyle ?>><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/square.png" alt="" class="helper"></a></div>
       <?php } ?>
     </div>
   </div>
