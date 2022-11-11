@@ -1378,7 +1378,7 @@ h6{font-size:1rem;font-weight:normal;line-height:1.1}
 .overlay-white:before{content:"";display:block;width:80%;height:100%;position:absolute;top:0;right:0;z-index:5;background:-webkit-gradient(linear,left top,right top,from(rgba(255,255,255,0)),color-stop(50%,#fff),to(#fff));background:linear-gradient(to right,rgba(255,255,255,0) 0,#fff 50%,#fff 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#00ffffff",endColorstr="#ffffff",GradientType=1)}
 .overlay-white .wp-block-cover__inner-container{position:relative;z-index:10}
 .overlay-white .video figure{margin:0 0 20px;padding:5px;border:2px solid #c1c56a}
-.wp-block-column.innerpad{padding:20px}
+.wp-block-column.innerpad{padding:30px}
 .wp-block-column.innerpad .wp-block-buttons{gap:.85em}
 .wp-block-column.innerpad a.wp-block-button__link{padding:5px 15px;font-size:1em;border:1px solid #fff}
 .wp-block-column.innerpad a.wp-block-button__link:hover{background:rgba(0,0,0,0) !important;color:#fff !important}
@@ -1426,6 +1426,7 @@ body.subpage #primary{padding-top:20px}
 .site-header{position:fixed;top:0;left:0;width:100%;height:100px;background:#fff}
 .slider .slide-text .wrap .inline{padding:0}
 .slider .slide-text .slideHeading{font-size:4em}
+.wp-block-column.innerpad{padding:2.2vw}
 .footer-widget .sign-up-info{text-align:left;margin-bottom:0}
 .footer-widget .widgettext{text-align:left;margin-bottom:0}
 body.logged-in.admin-bar .site-header{top:32px}

@@ -649,7 +649,10 @@ body.mobile-menu-open {
 }
 
 .wp-block-column.innerpad {
-  padding: 20px;
+  padding: 30px;
+  @include tab {
+    padding: 2.2vw;
+  }
   .wp-block-buttons {
     gap: 0.85em;
   }
