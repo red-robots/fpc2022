@@ -1379,6 +1379,9 @@ h6{font-size:1rem;font-weight:normal;line-height:1.1}
 .overlay-white .wp-block-cover__inner-container{position:relative;z-index:10}
 .overlay-white .video figure{margin:0 0 20px;padding:5px;border:2px solid #c1c56a}
 .wp-block-column.innerpad{padding:20px}
+.wp-block-column.innerpad .wp-block-buttons{gap:.85em}
+.wp-block-column.innerpad a.wp-block-button__link{padding:5px 15px;font-size:1em;border:1px solid #fff}
+.wp-block-column.innerpad a.wp-block-button__link:hover{background:rgba(0,0,0,0) !important;color:#fff !important}
 .video-link{display:inline-block;position:relative}
 .video-link:before,.video-link:after{content:"";display:block;position:absolute;top:50%;left:50%;-webkit-transition:all ease .3s;transition:all ease .3s}
 .video-link:before{width:70px;height:70px;border-radius:100%;border:2px solid #fff;background-color:rgba(255,255,255,.15);-webkit-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);-webkit-box-shadow:0 19px 31px rgba(0,0,0,.1);box-shadow:0 19px 31px rgba(0,0,0,.1)}

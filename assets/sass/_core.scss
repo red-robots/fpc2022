@@ -650,6 +650,18 @@ body.mobile-menu-open {
 
 .wp-block-column.innerpad {
   padding: 20px;
+  .wp-block-buttons {
+    gap: 0.85em;
+  }
+  a.wp-block-button__link {
+    padding: 5px 15px;
+    font-size: 1em;
+    border: 1px solid #FFF;
+    &:hover {
+      background: transparent!important;
+      color: #FFF!important;
+    }
+  }
 }
 
 .video-link {

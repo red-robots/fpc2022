@@ -15,3 +15,9 @@
 .wp-block.innerpad {
   padding: 20px;
 }
+
+
+.wp-block-column.innerpad .wp-block-button__link {
+  padding: 5px 15px;
+  font-size: 1em;
+}
