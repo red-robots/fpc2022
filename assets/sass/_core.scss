@@ -648,6 +648,10 @@ body.mobile-menu-open {
   }
 }
 
+.border-bottom-gold {
+  border-bottom: 2px solid #c6c266;
+}
+
 .wp-block-column.innerpad {
   padding: 30px;
   @include tab {
