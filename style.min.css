@@ -1445,7 +1445,8 @@ body.subpage #primary{padding-top:20px;font-size:1rem;line-height:1.5}
 #insta-carousel .owl-dots{text-align:center;margin-top:15px}
 #insta-carousel .owl-dot{border:0;-webkit-appearance:none;-webkit-box-shadow:none;box-shadow:none;background:#ddd;width:13px;height:13px;border-radius:100px;margin:5px}
 #insta-carousel .owl-dot.active{background:#527337}
-#insta-carousel .sbi_photo{height:200px !important}
+#insta-carousel .sbi_photo_wrap{height:200px !important;overflow:hidden}
+#insta-carousel .sbi_photo{height:100% !important}
 .site-footer{background:#591929;color:#fff;font-size:13px}
 .site-footer .wrapper{padding-top:50px;padding-bottom:50px}
 .footer-widget{width:100%}

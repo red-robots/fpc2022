@@ -1092,8 +1092,12 @@ body.subpage {
       background: $secondary;
     }
   }
-  .sbi_photo {
+  .sbi_photo_wrap {
     height: 200px!important;
+    overflow: hidden;
+  }
+  .sbi_photo {
+    height: 100%!important;
   }
 }
 
