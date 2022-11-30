@@ -10,12 +10,12 @@ jQuery(document).ready(function ($) {
   $('#sbi_images .sbi_item').each(function(){
     $(this).wrap('.item').appendTo('#insta-carousel .owl-carousel');
   });
+  let countInstaPost = $('.sbi_item').length;
 
-  $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    responsiveClass:true,
-    responsive:{
+  if( countInstaPost > 0 ) {
+    var responsive_items = false;
+    if(countInstaPost==4) {
+      responsive_items = {
         0:{
             items:1,
             nav:true
@@ -25,12 +25,53 @@ jQuery(document).ready(function ($) {
             nav:false
         },
         1000:{
+            items:4,
+            nav:true,
+            loop:false
+        }
+      };
+    }
+    if(countInstaPost==5) {
+      responsive_items = {
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:4,
+            nav:true
+        },
+        1000:{
+            items:5,
+            nav:true,
+            loop:false
+        }
+      };
+    }
+    if(countInstaPost>5) {
+      responsive_items = {
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:4,
+            nav:true
+        },
+        1000:{
             items:6,
             nav:true,
             loop:false
         }
-    } 
-  });
+      };
+    }
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      responsiveClass:true,
+      responsive:responsive_items
+    });
+  }
 
   $('#menutoggle').on('click',function(e){
     e.preventDefault();
