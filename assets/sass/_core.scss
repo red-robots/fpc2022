@@ -1078,6 +1078,17 @@ body.subpage {
   .owl-dots {
     text-align: center;
     margin-top: 15px;
+    &.disabled {
+      display: block;
+      width: 100%;
+      float: left;
+      height: 0;
+      overflow: hidden;
+      margin-bottom: 30px;
+      .owl-dot {
+        display: none!important;
+      }
+    }
   }
   .owl-dot {
     border: none;
