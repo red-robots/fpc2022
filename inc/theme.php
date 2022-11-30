@@ -23,7 +23,7 @@ function my_login_logo() {
   if($logo_url) { ?>
   <style type="text/css">
     body.login {
-      background-color: #eaeaea;
+      background-color: #f2f2f2;
     }
     body.login div#login h1 a {
       background-image: url(<?php echo $logo_url; ?>);
@@ -38,12 +38,12 @@ function my_login_logo() {
     }
     body.login #backtoblog a, 
     body.login #nav a {
-      color: #157394;
+      color: #59192a;
       transition: all ease .3s;
     }
     body.login #backtoblog a:hover,
     body.login #nav a:hover {
-      color: #75c529;
+      color: #506330;
     }
     body.login form {
       border: none;
@@ -60,14 +60,20 @@ function my_login_logo() {
       margin-top: 15px;
     }
     body.login.wp-core-ui .button-primary {
-      background: #173d6d;
-      border-color: #0b2a52;
+      background: #59192a;
+      border-color: #59192a;
       font-weight: bold;
       text-transform: uppercase;
       transition: all ease .3s;
     }
     body.login.wp-core-ui .button-primary:hover {
-      background: #0e5bbd;
+      background: #506330;
+      border-color: #506330;
+    }
+    body.login input[type=text]:focus,
+    body.login input[type=password]:focus {
+      border-color: #506330;
+      box-shadow: 0 0 0 1px #506330;
     }
   </style>
 <?php }
