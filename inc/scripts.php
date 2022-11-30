@@ -48,6 +48,12 @@ function bellaworks_scripts() {
   );
 
   wp_enqueue_script( 
+    'owl-carousel','https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', 
+    array(), '2.3.4', 
+    true 
+  );
+
+  wp_enqueue_script( 
     'bellaworks-custom', 
     get_template_directory_uri() . '/assets/js/custom.min.js?v=1.1', 
     array(), '20200713', 

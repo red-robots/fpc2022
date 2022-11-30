@@ -5,27 +5,32 @@
  */
 jQuery(document).ready(function ($) {  
 
-  // const swiper = new Swiper('.slideshow .swiper', {
-  //   // Optional parameters
-  //   direction: 'vertical',
-  //   loop: true,
+  var instagramCarousel = '<div class="instagram-carousel-wrap"><div id="insta-carousel"><div class="owl-carousel owl-theme"></div></div></div>';
+  $('#sb_instagram').append(instagramCarousel);
+  $('#sbi_images .sbi_item').each(function(){
+    $(this).wrap('.item').appendTo('#insta-carousel .owl-carousel');
+  });
 
-  //   // If we need pagination
-  //   pagination: {
-  //     el: '.swiper-pagination',
-  //   },
-
-  //   // Navigation arrows
-  //   navigation: {
-  //     nextEl: '.swiper-button-next',
-  //     prevEl: '.swiper-button-prev',
-  //   },
-
-  //   // And if we need scrollbar
-  //   scrollbar: {
-  //     el: '.swiper-scrollbar',
-  //   },
-  // });
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true
+        },
+        600:{
+            items:4,
+            nav:false
+        },
+        1000:{
+            items:6,
+            nav:true,
+            loop:false
+        }
+    } 
+  });
 
   $('#menutoggle').on('click',function(e){
     e.preventDefault();

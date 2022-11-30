@@ -1,6 +1,7 @@
 	</div><!-- #content -->
 	
-  <?php get_template_part('parts/quicklinks'); ?>
+  <?php // get_template_part('parts/quicklinks'); ?>
+  <?php  //get_template_part('parts/instagram'); ?>
 
   <?php 
   $footer_logo = get_field("footer_logo","option");

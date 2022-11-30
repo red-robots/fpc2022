@@ -510,3 +510,4 @@ function get_social_media_html($atts) {
   ob_end_clean();
   return $output;
 }
+
