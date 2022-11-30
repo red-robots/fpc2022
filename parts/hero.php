@@ -58,4 +58,20 @@
       </div>
     </div>
   <?php } ?>
+<?php } else { ?>
+
+  <?php if ( is_singular() ) { 
+    $nb = get_field('no_banner');
+    $has_banner = ( isset($nb[0]) && $nb[0]=='no' ) ? false : true;
+    if( $has_banner  && $banner = get_field('banner') ) { ?>
+    <div class="subpage-hero">
+      <figure>
+        <img src="<?php echo $banner['url'] ?>" alt="<?php echo $banner['title'] ?>">
+      </figure>
+    </div>
+    <?php } ?>
+  <?php } ?>
+
+
 <?php } ?>
+

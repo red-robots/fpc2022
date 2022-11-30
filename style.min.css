@@ -1363,13 +1363,13 @@ h6{font-size:1rem;font-weight:normal;line-height:1.1}
 #site-navigation ul.menu a{display:inline-block;color:#591929;text-decoration:none}
 #site-navigation ul.menu a i{display:inline-block;width:0;font-size:0;color:rgba(0,0,0,0)}
 #site-navigation ul.menu>li{float:left;position:relative}
-#site-navigation ul.menu>li>a{text-transform:uppercase;font-family:"Ubuntu",sans-serif;font-size:14px;font-weight:normal;padding:40px 17px 39px;position:relative;z-index:1000}
+#site-navigation ul.menu>li>a{text-transform:uppercase;font-family:"Ubuntu",sans-serif;font-size:14px;font-weight:normal;padding:40px 18px 40px;position:relative;z-index:1000}
 #site-navigation ul.menu>li>a:after{content:"";display:block;width:0;height:2px;background:#c1c56a;position:absolute;left:17px;top:63px;opacity:0;-webkit-transition:all ease .3s;transition:all ease .3s}
 #site-navigation ul.menu>li.current_page_item>a:after,#site-navigation ul.menu>li:hover>a:after{width:calc(100% - 34px);opacity:1}
-#site-navigation ul.menu ul{display:block;width:250px;background:#591929;margin:0;padding:0;list-style:none;position:absolute;left:0;-webkit-transition:all ease .3s;transition:all ease .3s;opacity:0;z-index:-999}
+#site-navigation ul.menu ul{display:block;width:250px;background:#591929;margin:0;padding:0;list-style:none;position:absolute;left:0;-webkit-transition:all ease .3s;transition:all ease .3s;opacity:0;z-index:-9999;height:0;overflow:hidden}
 #site-navigation ul.menu ul a{display:block;padding:5px 20px;color:#fff}
 #site-navigation ul.menu ul li.current_page_item>a,#site-navigation ul.menu ul>li:hover>a{color:#c1c56a}
-#site-navigation ul.menu li.menu-item-has-children:hover>ul{display:block;padding-top:10px;padding-bottom:10px;-webkit-transform:translateY(0);transform:translateY(0);opacity:1;z-index:9999}
+#site-navigation ul.menu li.menu-item-has-children:hover>ul{display:block;padding-top:10px;padding-bottom:10px;-webkit-transform:translateY(0);transform:translateY(0);opacity:1;z-index:9999;height:auto;-webkit-box-shadow:0 8px 24px rgba(0,0,0,.2);box-shadow:0 8px 24px rgba(0,0,0,.2)}
 .mobile-menu{display:none}
 .wp-block-columns{max-width:1200px;width:100%;margin:0 auto;padding-left:15px;padding-right:15px}
 .wp-block-columns.alignwide{max-width:80%}
@@ -1406,10 +1406,36 @@ h6{font-size:1rem;font-weight:normal;line-height:1.1}
 .footer-widget .sign-up-info{text-align:center;margin-bottom:0;margin-bottom:30px}
 .footer-widget .widgettext{margin-bottom:30px;text-align:center}
 .footer-widget .widgettext a.signupBtn{position:relative;z-index:10;color:#591929;display:inline-block;text-decoration:none;background:#fff !important;padding:4px 35px;opacity:1 !important;font-size:1.1em;font-weight:500;margin-bottom:12px}
-body.subpage{font-size:1em;line-height:1.4}
-body.subpage #primary{padding-top:20px}
+body.subpage #primary{padding-top:20px;font-size:1rem;line-height:1.5}
 .entry-content{max-width:1200px;width:100%;min-height:20em;margin:0 auto 50px;padding-left:15px;padding-right:15px}
 .entry-content .wrapper{padding-left:0;padding-right:0}
+.subpage-hero{position:relative;border-top:5px solid #c1c56a;margin-bottom:20px}
+.subpage-hero figure{margin:0}
+.subpage-hero img{width:100%;height:auto}
+.page-title{font-size:30px;line-height:1.2;text-transform:uppercase;text-align:center;letter-spacing:2px;color:#591929;position:relative}
+.page-title:after{content:"";display:block;width:80px;height:3px;background:#591929;margin:12px auto 0}
+.content-section{margin:80px 0}
+.twocols-container{margin-top:30px;margin-bottom:30px}
+.twocols-container .wrapper{max-width:1200px;width:100%;margin:25px auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.twocols-container .fxcol{width:100%}
+.twocols-container .fxcol.left h2:first-child{font-size:25px;line-height:1.2;text-transform:uppercase;letter-spacing:2px;color:#591929;position:relative;margin:0 0 30px}
+.twocols-container .fxcol.left h2:first-child:after{content:"";display:block;width:50px;height:3px;background:#591929;margin:10px 0 0}
+.twocols-container .fxcol.left p:empty{display:none}
+.twocols-container .fxcol.right figure{margin:0 0 15px}
+.twocols-container .fxcol.right img{width:100%;height:auto}
+.mapwrap{position:relative;width:100%;float:left}
+.mapwrap img.resizer{width:100%;height:auto;float:left}
+.mapwrap iframe{margin:0;width:100%;height:100%;position:absolute;top:0;left:0;z-index:10}
+.quick_links{margin-bottom:50px}
+.quick_links .widget-title{font-size:24px;color:#591929;width:100%;position:relative;text-align:center;letter-spacing:2px;text-transform:uppercase;margin:0 0 15px}
+.quick_links .wrapper{max-width:1400px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.quick_links .widget{padding:20px 15px;width:100%}
+.quick_links .widget a{display:block;width:100%;text-decoration:none;color:#591929;text-align:center}
+.quick_links .widget span{display:inline-block;width:100%;-webkit-transition:all ease .3s;transition:all ease .3s}
+.quick_links .widget span.icon{width:100px;height:100px;border-radius:100px;background:#591929;margin:0 auto 18px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.quick_links .widget span.icon i{color:#fff;font-size:48px;line-height:1}
+.quick_links .widget span.title{font-size:16px;line-height:1.3;color:#591929;text-transform:uppercase;letter-spacing:2px}
+.quick_links .widget a:hover span.icon{-webkit-transform:scale(1.1);transform:scale(1.1)}
 .site-footer{background:#591929;color:#fff;font-size:13px}
 .site-footer .wrapper{padding-top:50px;padding-bottom:50px}
 .footer-widget{width:100%}
@@ -1423,7 +1449,8 @@ body.subpage #primary{padding-top:20px}
 .footer-widget .widgettext a:hover{opacity:1}
 .footer-widget .social-media{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .footer-widget .social-media a{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:0 5px;font-size:.7rem;line-height:1;text-decoration:none;border-radius:100px;background:#fff;color:#591929;width:25px;height:25px;opacity:1}
-@media(min-width:820px){body{font-size:14px;padding-top:100px}
+@media(min-width:480px){.quick_links .widget{width:50%;padding:20px 15px}
+}@media(min-width:820px){body{font-size:14px;padding-top:100px}
 .site-header{position:fixed;top:0;left:0;width:100%;height:100px;background:#fff}
 .slider .slide-text .wrap .inline{padding:0}
 .slider .slide-text .slideHeading{font-size:4em}
@@ -1432,9 +1459,13 @@ body.subpage #primary{padding-top:20px}
 .footer-widget .widgettext{text-align:left;margin-bottom:0}
 body.logged-in.admin-bar .site-header{top:32px}
 body.subpage .site-header{-webkit-box-shadow:0 2px 10px rgba(0,0,0,.05);box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.twocols-container .fxcol.left{width:60%}
+.twocols-container .fxcol.right{width:36%}
+.quick_links .widget{padding:15px;width:25%}
 .footer-widget.foot-logo{padding-right:5vw}
 .footer-widget{width:25%}
 .footer-widget .widgettitle{text-align:left}
+}@media(min-width:960px){.quick_links .widget{width:16.666%}
 }@media screen and (max-width:820px){#site-logo{width:215px}
 .site-header .wrapper{padding-top:8px;padding-bottom:8px}
 #site-navigation{display:block;position:fixed;top:0;right:-100vw;max-width:340px;width:100%;height:100%;background:#fff;z-index:-999}
