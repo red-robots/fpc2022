@@ -1267,16 +1267,21 @@ body.subpage {
     @include flexgroup();
     @include flexbox-justify(space-between);
     margin-top: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 15px;
+    margin-top: 15px;
   }
   .linkbox {
-    flex-basis: 30%;
+    flex-basis: 100%;
     text-align: center;
+    margin-bottom: 35px;
+    @include tab {
+      flex-basis: 30%;
+    }
     h3 {
-      font-size: 0.9em;
+      font-size: 16px;
       font-weight: 400;
       line-height: 1.2;
-      margin: 0 0 10px;
+      margin: 0 0 15px;
       color: $primary;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -1297,6 +1302,18 @@ body.subpage {
         }
       }
     }
+    img {
+      width: 100%;
+      height: auto;
+      float: left;
+    }
+
+  }
+  div.img {
+    width: 100%;
+    height: auto;
+    float: left;
+    @include backgroundImage(center);
   }
 }
 

@@ -30,7 +30,7 @@ get_header(); ?>
       $directions = get_field('directions_block');
       $map = get_field('map');
     ?>
-    
+
     <section class="content-section">
       <?php if( have_rows('sections') ) { ?>
       <div class="twocols-container">

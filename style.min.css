@@ -1478,11 +1478,13 @@ body.subpage #primary{padding-top:20px;font-size:1rem;line-height:1.5;min-height
 #gform_wrapper_3 .gform_footer{padding-top:25px}
 #gform_wrapper_3 input.gform_button.button{border-radius:0;background:#c1c56a;padding:12px 30px;color:#fff;-webkit-appearance:none;text-transform:uppercase;border:none !important}
 #gform_wrapper_3 input.gform_button.button:hover{background:#591929}
-.donation-links .linkouts{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-top:30px;margin-bottom:50px}
-.donation-links .linkbox{-ms-flex-preferred-size:30%;flex-basis:30%;text-align:center}
-.donation-links .linkbox h3{font-size:.9em;font-weight:400;line-height:1.2;margin:0 0 10px;color:#591929;text-transform:uppercase;letter-spacing:1px}
+.donation-links .linkouts{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-top:30px;margin-bottom:15px;margin-top:15px}
+.donation-links .linkbox{-ms-flex-preferred-size:100%;flex-basis:100%;text-align:center;margin-bottom:35px}
+.donation-links .linkbox h3{font-size:16px;font-weight:400;line-height:1.2;margin:0 0 15px;color:#591929;text-transform:uppercase;letter-spacing:1px}
 .donation-links .linkbox .btn a{display:inline-block;background:#c1c56a;color:#fff;text-decoration:none;text-transform:uppercase;position:relative;width:100%;text-align:center;padding:10px 15px}
 .donation-links .linkbox .btn a:hover{background:#591929}
+.donation-links .linkbox img{width:100%;height:auto;float:left}
+.donation-links div.img{width:100%;height:auto;float:left;background-size:cover;background-position:center;background-repeat:no-repeat}
 body.page-template-page-give .entry-content h3{margin:10px 0 5px}
 body.page-template-page-give .entry-content h4{margin:10px 0 6px}
 .site-footer{background:#591929;color:#fff;font-size:13px}
@@ -1512,6 +1514,7 @@ body.subpage .site-header{-webkit-box-shadow:0 2px 10px rgba(0,0,0,.05);box-shad
 .twocols-container .fxcol.right{width:36%}
 .quick_links .widget{padding:15px;width:25%}
 #gform_wrapper_3.gform_legacy_markup_wrapper ul.gform_fields li.gfield#field_3_1 .ginput_container_name{padding-right:15px}
+.donation-links .linkbox{-ms-flex-preferred-size:30%;flex-basis:30%}
 .footer-widget.foot-logo{padding-right:5vw}
 .footer-widget{width:25%}
 .footer-widget .widgettitle{text-align:left}
