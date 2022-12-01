@@ -9,20 +9,33 @@ add_action('init', 'js_custom_init', 1);
 function js_custom_init() {
     $post_types = array(
       array(
-        'post_type' => 'team',
-        'menu_name' => 'Team',
-        'plural'    => 'Team',
-        'single'    => 'Team',
+        'post_type' => 'staff',
+        'menu_name' => 'Staff',
+        'plural'    => 'Staff',
+        'single'    => 'Staff',
         'menu_icon' => 'dashicons-groups',
         'supports'  => array('title','editor')
       ),
       array(
-        'post_type' => 'wins',
-        'menu_name' => 'Wins',
-        'plural'    => 'Wins',
-        'single'    => 'Win',
-        'menu_icon' => 'dashicons-awards',
+        'post_type' => 'sermon',
+        'menu_name' => 'Sermons',
+        'plural'    => 'Sermons',
+        'single'    => 'Sermon',
         'supports'  => array('title','editor')
+      ),
+      array(
+        'post_type' => 'event',
+        'menu_name' => 'Events',
+        'plural'    => 'Events',
+        'single'    => 'Event',
+        'supports'  => array('title','editor','thumbnail')
+      ),
+      array(
+        'post_type' => 'newsletter',
+        'menu_name' => 'Newsletter',
+        'plural'    => 'Newsletters',
+        'single'    => 'Newsletter',
+        'supports'  => array('title','thumbnail')
       ),
       // array(
       //   'post_type' => 'insights',
