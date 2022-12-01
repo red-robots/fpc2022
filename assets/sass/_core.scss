@@ -1300,6 +1300,17 @@ body.subpage {
   }
 }
 
+body.page-template-page-give {
+  .entry-content {
+    h3 {
+      margin: 10px 0 5px;
+    }
+    h4 {
+      margin: 10px 0 6px;
+    }
+  }
+}
+
 /* FOOTER */
 .site-footer {
   background: $primary;
