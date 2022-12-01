@@ -857,7 +857,7 @@ body.subpage {
   max-width: $wrapper;
   width: 100%;
   min-height: 20em;
-  margin: 0 auto 50px;
+  margin: 0 auto 70px;
   padding-left: 15px;
   padding-right: 15px;
   .wrapper {
@@ -1109,6 +1109,193 @@ body.subpage {
   }
   .sbi_photo {
     height: 100%!important;
+  }
+}
+
+#gform_wrapper_3 {
+  select, input[type="text"] {
+    border-radius: 0!important;
+    padding: 5px;
+    border: 1px solid #6d6d6d;
+    height: 32px;
+    margin: 0 0;
+  }
+  .ginput_container_address {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .ginput_address_line_1,
+  .ginput_address_line_2 {
+    width: 100%;
+    margin: 0 0 8px;
+  }
+  .ginput_address_city,
+  .ginput_address_state {
+    width: 40%;
+    padding: 0 10px!important;
+    margin: 0 0;
+    select {
+      margin: 0 0;
+    }
+  }
+  .ginput_address_city {
+    padding-left: 0!important;
+  }
+  .ginput_address_zip {
+    width: 20%;
+    padding: 0 0 0 10px!important;
+    margin: 0 0!important;
+  }
+  &.gform_legacy_markup_wrapper ul.gform_fields li.gfield#field_3_3,
+  &.gform_legacy_markup_wrapper ul.gform_fields li.gfield#field_3_4 {
+    margin: 0 0;
+    padding: 0 0;
+    width: 49.1%;
+    clear: none;
+    .ginput_container,
+    .ginput_container input {
+      width: 100%;
+    }
+  }
+  &.gform_legacy_markup_wrapper ul.gform_fields li.gfield#field_3_3 {
+    float: left;
+  }
+  &.gform_legacy_markup_wrapper ul.gform_fields li.gfield#field_3_4 {
+    float: right;
+  }
+  &.gform_legacy_markup_wrapper ul.gform_fields li.gfield#field_3_1 .ginput_container_name {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 0;
+    margin: 0 0;
+    @include tab {
+      padding-right: 15px;
+    }
+    p {
+      display: block;
+      margin: 0 0;
+      padding: 0 0;
+      width: 49%;
+      label {
+        position: relative;
+        top: -20px;
+      }
+    }
+    p input {
+      display: block;
+      margin: 0 0;
+      padding: 0 0;
+      width: 100%;
+    }
+    p span {
+      display: block;
+      width: 100%;
+      margin: 0 0!important;
+      padding: 0 0!important;
+    }
+  }
+  &.gform_legacy_markup_wrapper ul.gform_fields li.gfield#field_3_1,
+  &.gform_legacy_markup_wrapper ul.gform_fields li.gfield#field_3_2 {
+    margin-top: 0!important;
+    padding-right: 0!important;
+  }
+  &.gform_legacy_markup_wrapper ul.gform_fields li.gfield#field_3_2 {
+    position: relative;
+    top: -15px;
+  }
+  &.gform_legacy_markup_wrapper ul.gform_fields li.gfield#field_3_1 p {
+    margin: 0 0 0 0;
+  }
+  &.gform_legacy_markup_wrapper ul.gform_fields li.gfield#field_3_1 {
+    label {
+      position: relative;
+      top: 13px;
+    }
+    span label {
+      top: 0;
+      margin: 0 0!important;
+      padding: 0 0!important;
+    }
+  }
+  &.gform_legacy_markup_wrapper ul.gform_fields li#field_3_5 {
+    width: 100%;
+    float: left;
+    label.gfield_label {
+      position: relative;
+      top: 12px;
+    }
+    .gfield_radio li {
+      position: relative;
+      overflow: visible;
+      label {
+        margin: 0 0;
+        position: absolute;
+        top: 5px;
+        left: 20px;
+      }
+    }
+  }
+  &.gform_legacy_markup_wrapper ul.gform_fields li#field_3_6 {
+    margin-top: 20px!important;
+    width: 100%;
+    float: left;
+  }
+  .gform_footer {
+    padding-top: 25px;
+  }
+  input.gform_button.button {
+    border-radius: 0;
+    background: $lime;
+    padding: 12px 30px;
+    color: #FFF;
+    -webkit-appearance: none;
+    text-transform: uppercase;
+    border: none!important;
+    &:hover {
+      background: $primary;
+    }
+  }
+}
+
+.donation-links {
+  .linkouts {
+    @include flexgroup();
+    @include flexbox-justify(space-between);
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  .linkbox {
+    flex-basis: 30%;
+    text-align: center;
+    h3 {
+      font-size: 0.9em;
+      font-weight: 400;
+      line-height: 1.2;
+      margin: 0 0 10px;
+      color: $primary;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .btn {
+      a {
+        display: inline-block;
+        background: $lime;
+        color: #FFF;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+        width: 100%;
+        text-align: center;
+        padding: 10px 15px;
+        &:hover {
+          background: $primary;
+        }
+      }
+    }
   }
 }
 
