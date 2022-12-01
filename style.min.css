@@ -1406,8 +1406,8 @@ h6{font-size:1rem;font-weight:normal;line-height:1.1}
 .footer-widget .sign-up-info{text-align:center;margin-bottom:0;margin-bottom:30px}
 .footer-widget .widgettext{margin-bottom:30px;text-align:center}
 .footer-widget .widgettext a.signupBtn{position:relative;z-index:10;color:#591929;display:inline-block;text-decoration:none;background:#fff !important;padding:4px 35px;opacity:1 !important;font-size:1.1em;font-weight:500;margin-bottom:12px}
-body.subpage #primary{padding-top:20px;font-size:1rem;line-height:1.5}
-.entry-content{max-width:1200px;width:100%;min-height:20em;margin:0 auto 70px;padding-left:15px;padding-right:15px}
+body.subpage #primary{padding-top:20px;font-size:1rem;line-height:1.5;min-height:20em}
+.entry-content{max-width:1200px;width:100%;margin:0 auto 70px;padding-left:15px;padding-right:15px}
 .entry-content .wrapper{padding-left:0;padding-right:0}
 .subpage-hero{position:relative;border-top:5px solid #c1c56a;margin-bottom:20px}
 .subpage-hero figure{margin:0}

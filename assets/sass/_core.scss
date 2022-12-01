@@ -845,6 +845,7 @@ body.subpage {
     padding-top: 20px;
     font-size: 1rem;
     line-height: 1.5;
+    min-height: 20em;
   }
   @include tab {
     .site-header {
@@ -856,7 +857,7 @@ body.subpage {
 .entry-content {
   max-width: $wrapper;
   width: 100%;
-  min-height: 20em;
+  // min-height: 20em;
   margin: 0 auto 70px;
   padding-left: 15px;
   padding-right: 15px;
