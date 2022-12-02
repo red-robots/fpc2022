@@ -1328,6 +1328,124 @@ body.page-template-page-give {
   }
 }
 
+section.staff {
+  .inner {
+    @include flexgroup();
+    justify-content: space-between;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .staff-card {
+    width: 100%;
+    padding: 20px;
+    transition: all ease .3s;
+    @include tab {
+      width: 33.33%;
+    }
+    figure {
+      margin: 0 0;
+      @include backgroundImage(center);
+      background-color: #e0e2c6;
+      position: relative;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      &.no-image {
+        &:before {
+          content:"Photo Coming Soon";
+          display: block;
+          width: 100%;
+          text-align: center;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          color: #a0a66c;
+          text-transform: uppercase;
+          font-size: 14px;
+          letter-spacing: 2px;
+          text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+        }
+      }
+    }
+    .card {
+      display: block;
+      padding: 20px;
+      border: 2px solid $lime;
+      background-color: rgba(194,198,106,.2);
+      color: $primary;
+      text-align: center;
+      transition: all ease .3s;
+    }
+    a {
+      display: block;
+      text-decoration: none;
+      i {
+        color: #383838;
+      }
+    }
+    .staffname {
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 1.3;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $primary;
+    }
+    .stafftitle {
+      font-size: 13px;
+      line-height: 1.3;
+      color: #383838;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 10px 0;
+    }
+    &:hover {
+      .card {
+        background: #D4D898;
+      }
+    }
+  }
+}
+
+section.dec-elders {
+  margin: 50px auto 70px;
+  h2 {
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 1.3;
+    margin: 0 0 20px;
+    color: $primary;
+    border-bottom: 1px solid $primary;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  .colwrap {
+    @include flexgroup();
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: 50px;
+  }
+  .col {
+    width: 100%;
+    padding: 15px;
+    @include tab {
+      width: 33.333%;
+    }
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 1.2;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 0 0 10px;
+      color: $secondary;
+    }
+  }
+}
+
 /* FOOTER */
 .site-footer {
   background: $primary;
