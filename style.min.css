@@ -1512,7 +1512,8 @@ section.dec-elders .col h3{font-size:18px;font-weight:normal;line-height:1.2;let
 .pop-wrap div.pic img{width:100%;height:auto}
 .pop-wrap div.bio{width:100%;font-size:14px;line-height:1.5}
 .pop-wrap div.bio h1{margin:0;font-size:2.2rem;line-height:1.2;color:#591929}
-.pop-wrap div.bio h2{font-size:1.1rem;line-height:1.2;margin:0 0 25px}
+.pop-wrap div.bio h2{font-size:1.1rem;line-height:1.2;margin:0}
+.pop-wrap div.bio div.heading{margin-bottom:20px}
 .site-footer{background:#591929;color:#fff;font-size:13px}
 .site-footer .wrapper{padding-top:50px;padding-bottom:50px}
 .footer-widget{width:100%}

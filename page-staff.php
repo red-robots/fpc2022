@@ -53,11 +53,15 @@ get_header(); ?>
                 </figure>
               </span>
               <h3 class="staffname"><?php the_title(); ?></h3>
+              <?php if ($pTitle) { ?>
               <h4 class="stafftitle"><?php echo $pTitle; ?></h4>
+              <?php } ?>
             </a>
+            <?php if ($email) { ?>
             <div class="email">
               <a href="mailto:<?php echo $spammed; ?>"><i class="fas fa-envelope fa-lg"></i></a>
             </div>
+            <?php } ?>
           </div>
         </div>
         <div id="dialog-content-<?php echo $id?>" style="display:none;max-width:1000px;">
@@ -66,12 +70,18 @@ get_header(); ?>
           <div class="pop-wrap">
             <div class="pic"><img src="<?php echo $picture['url']; ?>" alt="<?php echo $picture['alt']; ?>"></div>
             <div class="bio">
-              <h1><?php the_title(); ?></h1>
-              <h2><?php echo $pTitle; ?></h2>
-              <div class="email">
-                <a href="<?php echo $spammed; ?>"><?php echo $spammed; ?></a>
+              <div class="heading">
+                <h1><?php the_title() ?></h1>
+                <?php if ($pTitle) { ?>
+                <h2><?php echo $pTitle; ?></h2>
+                <?php } ?>
+                <?php if ($email) { ?>
+                <div class="email">
+                  <a href="<?php echo $spammed; ?>"><?php echo $spammed; ?></a>
+                </div>
+                <?php } ?>
               </div>
-              <?php echo $bio; ?>
+              <div class="text"><?php echo $bio; ?></div>
             </div>
           </div>
           </div>
