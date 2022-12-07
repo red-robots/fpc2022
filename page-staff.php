@@ -40,10 +40,18 @@ get_header(); ?>
         ?>
         <div class="staff-card">
           <div class="card">
-            <a data-fancybox="dialog" data-src="#dialog-content-<?php echo $id?>" href="javascript:void(0)" class="pop">
-              <figure class="<?php echo ($picture) ? 'has-image':'no-image'; ?>"<?php echo $photo_style ?>>
-                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/profile.png" alt="">
-              </figure>
+              <span class="photo">
+                <a data-fancybox="dialog" data-src="#dialog-content-<?php echo $id?>" href="javascript:void(0)" class="pop">
+                  <?php if ($photo) { ?>
+                    <img src="<?php echo $picture['url']?>" alt="<?php echo $picture['title'] ?>">
+                  <?php } else { ?>
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/profile.png" alt="">
+                  <?php } ?>
+                </a>
+                <figure class="<?php echo ($picture) ? 'has-image':'no-image'; ?>"<?php echo $photo_style ?>>
+                  <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/profile.png" alt="">
+                </figure>
+              </span>
               <h3 class="staffname"><?php the_title(); ?></h3>
               <h4 class="stafftitle"><?php echo $pTitle; ?></h4>
             </a>
@@ -52,7 +60,7 @@ get_header(); ?>
             </div>
           </div>
         </div>
-        <div id="#dialog-content-<?php echo $id?>" style="display:none;max-width:800px;">
+        <div id="dialog-content-<?php echo $id?>" style="display:none;max-width:1000px;">
           <div id="pop-<?php echo $dashedTitle; ?>" class="pop-bio">
           <div class="nav"></div>
           <div class="pop-wrap">
