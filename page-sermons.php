@@ -23,7 +23,7 @@ get_header(); ?>
       <?php
         // set the date
         $prevMonth = '';
-
+        //$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
         $wp_query = new WP_Query();
         $wp_query->query(array(
           'post_type'=>'sermon',

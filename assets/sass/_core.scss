@@ -1521,6 +1521,7 @@ section.dec-elders {
   margin-top: 40px;
 }
 .two-columns-section {
+  margin-bottom: 50px;
   @include flexgroup();
   @include flexbox-justify(space-between);
   .sermons {
@@ -1572,7 +1573,7 @@ section.dec-elders {
     line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: 3px;
-    padding: 10px 15px;
+    padding: 15px 15px;
   }
 
   .info {
@@ -1721,12 +1722,46 @@ section.dec-elders {
       margin: 0 0;
     }
   }
+
+  /* NEWSLETTER */
+  .sermons.news {
+    .info {
+      padding: 20px;
+      min-height: 30px;
+      h3 {
+        margin: 0 0;
+        font-weight: 400;
+        letter-spacing: 2px;
+      }
+      a {
+        color: $primary;
+        text-decoration: none;
+        i {
+          display: inline-block;
+          position: relative;
+          right: -5px;
+          transition: all ease .2s;
+        }
+        &:hover {
+          color: $lime;
+          i {
+            transform: translateX(4px);
+          }
+        }
+      }
+      .sermon {
+        width: 100%;
+        padding: 0 0;
+      }
+    }
+  }
+
 }
 
 .pagination {
   width: 100%;
   float: left;
-  margin: 10px 0 30px;
+  margin: 20px 0 50px;
   a {
     display: inline-block;
     text-decoration: none;

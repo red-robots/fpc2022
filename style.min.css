@@ -1515,7 +1515,7 @@ section.dec-elders .col h3{font-size:18px;font-weight:normal;line-height:1.2;let
 .pop-wrap div.bio h2{font-size:1.1rem;line-height:1.2;margin:0}
 .pop-wrap div.bio div.heading{margin-bottom:20px}
 .sermons-wrapper{margin-top:40px}
-.two-columns-section{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.two-columns-section{margin-bottom:50px;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .two-columns-section .sermons{width:100%}
 .two-columns-section .widget-area{width:100%;margin-top:15px}
 .two-columns-section .widget-area ul{margin:0;padding:0;list-style:none}
@@ -1523,7 +1523,7 @@ section.dec-elders .col h3{font-size:18px;font-weight:normal;line-height:1.2;let
 .two-columns-section .widget-area h2{font-size:18px;font-weight:normal;line-height:1.2;letter-spacing:2px;text-transform:uppercase;margin:0 0 15px 0;color:#383838}
 .two-columns-section .widget-area a{text-decoration:none;color:#591929;font-size:15px}
 .two-columns-section .widget-area a:hover{color:#c1c56a}
-.two-columns-section .month-year{margin:18px 0 0;background:#c1c56a;color:#591929;font-size:1.5rem;font-weight:normal;line-height:1.1;text-transform:uppercase;letter-spacing:3px;padding:10px 15px}
+.two-columns-section .month-year{margin:18px 0 0;background:#c1c56a;color:#591929;font-size:1.5rem;font-weight:normal;line-height:1.1;text-transform:uppercase;letter-spacing:3px;padding:15px 15px}
 .two-columns-section .info{background-color:#efefef;position:relative;min-height:100px;padding:10px 10px 10px 110px;border-bottom:3px solid #591929;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .two-columns-section .info:before{content:"";display:block;width:2px;height:80%;background:#591929;position:absolute;top:50%;left:110px;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
 .two-columns-section .info .date{width:100px;height:100px;position:absolute;top:0;left:0;padding:15px;font-size:14px;position:absolute;top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
@@ -1538,7 +1538,14 @@ section.dec-elders .col h3{font-size:18px;font-weight:normal;line-height:1.2;let
 .two-columns-section .info .downloads{width:100%;text-align:left;padding-left:20px;margin-top:15px}
 .two-columns-section .info h3{color:#591929;font-size:1.2rem;font-weight:normal;line-height:1.1;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
 .two-columns-section .info h4{color:#591929;font-size:15px;font-weight:normal;line-height:1.1;text-transform:uppercase;letter-spacing:1px;margin:0}
-.pagination{width:100%;float:left;margin:10px 0 30px}
+.two-columns-section .sermons.news .info{padding:20px;min-height:30px}
+.two-columns-section .sermons.news .info h3{margin:0;font-weight:400;letter-spacing:2px}
+.two-columns-section .sermons.news .info a{color:#591929;text-decoration:none}
+.two-columns-section .sermons.news .info a i{display:inline-block;position:relative;right:-5px;-webkit-transition:all ease .2s;transition:all ease .2s}
+.two-columns-section .sermons.news .info a:hover{color:#c1c56a}
+.two-columns-section .sermons.news .info a:hover i{-webkit-transform:translateX(4px);transform:translateX(4px)}
+.two-columns-section .sermons.news .info .sermon{width:100%;padding:0}
+.pagination{width:100%;float:left;margin:20px 0 50px}
 .pagination a{display:inline-block;text-decoration:none;padding:8px 10px;color:#fff;border-radius:4px;font-size:15px;line-height:1.1;background:#591929;min-width:30px;text-align:center}
 .pagination a:hover{background:#c1c56a}
 .pagination ul{margin:0;padding:0;list-style:none}
