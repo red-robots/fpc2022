@@ -54,11 +54,11 @@ a,input,button,select,textarea {
 	transition: all ease .3s;
 }
 a {
-	color: $blue;
-	text-decoration: underline;
-	&:hover {
-    color: tint($blue,20%);
-	}
+  text-decoration: underline;
+	color: #0999f3;
+  &:hover {
+    color: #191970;
+  }
 }
 h1 {
   font-size: 3rem;
@@ -1484,8 +1484,10 @@ section.dec-elders {
   justify-content: space-between;
   div.pic {
     width: 100%;
+    margin-bottom: 10px;
     @include tab {
       width: 35%;
+      margin-bottom: 0;
     }
     img {
       width: 100%;
@@ -1515,9 +1517,213 @@ section.dec-elders {
     }
   }
 }
+.sermons-wrapper {
+  margin-top: 40px;
+}
+.two-columns-section {
+  @include flexgroup();
+  @include flexbox-justify(space-between);
+  .sermons {
+    width: 100%;
+    @include tab {
+      width: 70%;
+    }
+  }
 
+  .widget-area {
+    width: 100%;
+    margin-top: 15px;
+    @include tab {
+      width: 25%;
+    }
+    ul {
+      margin: 0 0;
+      padding: 0 0;
+      list-style: none;
+      li {
+        margin: 0 0 4px;
+      }
+    }
+    h2 {
+      font-size: 18px;
+      font-weight: normal;
+      line-height: 1.2;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 0 0 15px 0;
+      color: #383838;
+    }
+    a {
+      text-decoration: none;
+      color: $primary;
+      font-size: 15px;
+      &:hover {
+        color: $lime;
+      }
+    }
+  }
 
+  .month-year {
+    margin: 18px 0 0;
+    background: $lime;
+    color: $primary;
+    font-size: 1.5rem;
+    font-weight: normal;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 10px 15px;
+  }
 
+  .info {
+    background-color: #efefef;
+    position: relative;
+    min-height: 100px;
+    padding: 10px 10px 10px 110px;
+    border-bottom: 3px solid $primary;
+    @include flexgroup();
+    justify-content: space-between;
+    align-items: center;
+    .date {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 15px;
+      font-size: 14px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      .month {
+        position: relative;
+        top: -3px;
+        text-transform: uppercase;
+      }
+      .day {
+        position: absolute;
+        bottom: 17px;
+        right: 5px;
+      }
+      &:before {
+        content:"";
+        display: block;
+        width: 1px;
+        height: 80%;
+        background: #000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%) rotate(40deg);
+      }
+      &:after {
+        content:"";
+        display: block;
+        width: 2px;
+        height: 65%;
+        background: $primary;
+        position: absolute;
+        top: 50%;
+        right: -14px;
+        transform: translateY(-50%);
+      }
+    }
+
+    .sermon {
+      position: relative;
+      padding-left: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 100%;
+      @include xs {
+        width: 60%;
+      }
+    }
+
+    .watch, .download {
+      a {
+        display: inline-block;
+        margin: 3px 0;
+        color: #0999f3;
+        &:hover {
+          color: #191970;
+        }
+      }
+    }
+
+    .passage {
+      width: 100%;
+      font-size: 14px;
+      @include xs {
+        width: 25%;
+      }
+    }
+
+    .downloads {
+      width: 100%;
+      text-align: center;
+      @include xs {
+        width: 15%;
+      }
+    }
+
+    h3 {
+      color: $primary;
+      font-size: 1.2rem;
+      font-weight: normal;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 10px;
+    }
+
+    h4 {
+      color: $primary;
+      font-size: 15px;
+      font-weight: normal;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0;
+    }
+  }
+}
+
+.pagination {
+  width: 100%;
+  float: left;
+  margin: 10px 0 30px;
+  a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 10px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 1.1;
+    background: $primary;
+    min-width: 30px;
+    text-align: center;
+    &:hover {
+      background: $lime;
+    }
+  }
+  ul {
+    margin: 0 0;
+    padding: 0 0;
+    list-style: none;
+  }
+  li {
+    float: left;
+    margin-right: 5px;
+    &.active {
+      a {
+        background: $lime;
+      }
+    }
+  }
+}
 /* FOOTER */
 .site-footer {
   background: $primary;
