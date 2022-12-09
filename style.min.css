@@ -1525,16 +1525,17 @@ section.dec-elders .col h3{font-size:18px;font-weight:normal;line-height:1.2;let
 .two-columns-section .widget-area a:hover{color:#c1c56a}
 .two-columns-section .month-year{margin:18px 0 0;background:#c1c56a;color:#591929;font-size:1.5rem;font-weight:normal;line-height:1.1;text-transform:uppercase;letter-spacing:3px;padding:10px 15px}
 .two-columns-section .info{background-color:#efefef;position:relative;min-height:100px;padding:10px 10px 10px 110px;border-bottom:3px solid #591929;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.two-columns-section .info:before{content:"";display:block;width:2px;height:80%;background:#591929;position:absolute;top:50%;left:110px;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
 .two-columns-section .info .date{width:100px;height:100px;position:absolute;top:0;left:0;padding:15px;font-size:14px;position:absolute;top:50%;left:0;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
 .two-columns-section .info .date .month{position:relative;top:-3px;text-transform:uppercase}
 .two-columns-section .info .date .day{position:absolute;bottom:17px;right:5px}
 .two-columns-section .info .date:before{content:"";display:block;width:1px;height:80%;background:#000;position:absolute;top:50%;left:50%;-webkit-transform:translateY(-50%) translateX(-50%) rotate(40deg);transform:translateY(-50%) translateX(-50%) rotate(40deg)}
-.two-columns-section .info .date:after{content:"";display:block;width:2px;height:65%;background:#591929;position:absolute;top:50%;right:-14px;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
 .two-columns-section .info .sermon{position:relative;padding-left:20px;padding-top:10px;padding-bottom:10px;width:100%}
+.two-columns-section .info .watch,.two-columns-section .info .download{display:inline-block;width:auto;margin-right:15px}
 .two-columns-section .info .watch a,.two-columns-section .info .download a{display:inline-block;margin:3px 0;color:#0999f3}
 .two-columns-section .info .watch a:hover,.two-columns-section .info .download a:hover{color:#191970}
-.two-columns-section .info .passage{width:100%;font-size:14px}
-.two-columns-section .info .downloads{width:100%;text-align:center}
+.two-columns-section .info .passage{width:100%;font-size:14px;padding-left:20px}
+.two-columns-section .info .downloads{width:100%;text-align:left;padding-left:20px;margin-top:15px}
 .two-columns-section .info h3{color:#591929;font-size:1.2rem;font-weight:normal;line-height:1.1;text-transform:uppercase;letter-spacing:1px;margin:0 0 10px}
 .two-columns-section .info h4{color:#591929;font-size:15px;font-weight:normal;line-height:1.1;text-transform:uppercase;letter-spacing:1px;margin:0}
 .pagination{width:100%;float:left;margin:10px 0 30px}
@@ -1558,8 +1559,8 @@ section.dec-elders .col h3{font-size:18px;font-weight:normal;line-height:1.2;let
 .footer-widget .social-media a{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:0 5px;font-size:.7rem;line-height:1;text-decoration:none;border-radius:100px;background:#fff;color:#591929;width:25px;height:25px;opacity:1}
 @media(min-width:480px){.quick_links .widget{width:50%;padding:20px 15px}
 }@media(min-width:600px){.two-columns-section .info .sermon{width:60%}
-.two-columns-section .info .passage{width:25%}
-.two-columns-section .info .downloads{width:15%}
+.two-columns-section .info .passage{width:25%;padding-left:0}
+.two-columns-section .info .downloads{width:15%;padding-left:0;text-align:center;margin-top:0}
 }@media(min-width:820px){body{font-size:14px;padding-top:100px}
 .site-header{position:fixed;top:0;left:0;width:100%;height:100px;background:#fff}
 .slider .slide-text .wrap .inline{padding:0}
@@ -1580,6 +1581,9 @@ section.dec-elders .col{width:33.333%}
 .pop-wrap div.bio{width:62%}
 .two-columns-section .sermons{width:70%}
 .two-columns-section .widget-area{width:25%}
+.two-columns-section .info:before{display:none}
+.two-columns-section .info .date:after{content:"";display:block;width:2px;height:65%;background:#591929;position:absolute;top:50%;right:-14px;-webkit-transform:translateY(-50%);transform:translateY(-50%)}
+.two-columns-section .info .watch,.two-columns-section .info .download{width:100%;display:block;margin-right:0}
 .footer-widget.foot-logo{padding-right:5vw}
 .footer-widget{width:25%}
 .footer-widget .widgettitle{text-align:left}

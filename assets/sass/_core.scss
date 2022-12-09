@@ -1584,6 +1584,20 @@ section.dec-elders {
     @include flexgroup();
     justify-content: space-between;
     align-items: center;
+    &:before {
+      content:"";
+      display: block;
+      width: 2px;
+      height: 80%;
+      background: $primary;
+      position: absolute;
+      top: 50%;
+      left: 110px;
+      transform: translateY(-50%);
+    }
+    @include tab {
+      &:before {display:none;}
+    }
     .date {
       width: 100px;
       height: 100px;
@@ -1617,17 +1631,21 @@ section.dec-elders {
         left: 50%;
         transform: translateY(-50%) translateX(-50%) rotate(40deg);
       }
-      &:after {
-        content:"";
-        display: block;
-        width: 2px;
-        height: 65%;
-        background: $primary;
-        position: absolute;
-        top: 50%;
-        right: -14px;
-        transform: translateY(-50%);
+
+      @include tab {
+        &:after {
+          content:"";
+          display: block;
+          width: 2px;
+          height: 65%;
+          background: $primary;
+          position: absolute;
+          top: 50%;
+          right: -14px;
+          transform: translateY(-50%);
+        }
       }
+      
     }
 
     .sermon {
@@ -1642,6 +1660,14 @@ section.dec-elders {
     }
 
     .watch, .download {
+      display: inline-block;
+      width: auto;
+      margin-right: 15px;
+      @include tab {
+        width: 100%;
+        display: block;
+        margin-right: 0;
+      }
       a {
         display: inline-block;
         margin: 3px 0;
@@ -1655,16 +1681,23 @@ section.dec-elders {
     .passage {
       width: 100%;
       font-size: 14px;
+      padding-left: 20px;
       @include xs {
         width: 25%;
+        padding-left: 0;
       }
     }
 
     .downloads {
       width: 100%;
-      text-align: center;
+      text-align: left;
+      padding-left: 20px;
+      margin-top: 15px;
       @include xs {
         width: 15%;
+        padding-left: 0;
+        text-align: center;
+        margin-top: 0;
       }
     }
 
