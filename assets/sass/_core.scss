@@ -1060,17 +1060,18 @@ body.subpage {
   @include flexbox-align-items(center);
 }
 
-#sb_instagram {
-  #sbi_load {
-    display: none;
-  }
-  #sbi_images {
-    padding: 0 0!important;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-  }
-}
+// #sb_instagram {
+//   #sbi_load {
+//     display: none;
+//   }
+//   #sbi_images {
+//     padding: 0 0!important;
+//     width: 0;
+//     height: 0;
+//     overflow: hidden;
+//   }
+// }
+
 .instagram-carousel-wrap {
   width: 100%;
   float: left;
