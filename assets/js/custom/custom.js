@@ -1,8 +1,9 @@
 /**
  *	Custom jQuery Scripts
- *	Date Modified: 04.12.2022
+ *	Date Modified: 01.26.2023
  *	Developed by: Lisa DeBona
  */
+
 jQuery(document).ready(function ($) {  
 
   $('#menutoggle').on('click',function(e){
