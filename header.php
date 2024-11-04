@@ -32,7 +32,13 @@ var siteURL = '<?php echo get_site_url();?>';
 var currentURL = '<?php echo get_permalink();?>';
 var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
 </script>
-<?php wp_head(); ?>
+<?php wp_head(); 
+
+
+$on_off = get_field('on_off', 'option');
+$head_ban_copy = get_field('head_ban_copy', 'option');
+
+?>
 </head>
 <?php 
 $extraClass = '';
@@ -47,6 +53,7 @@ $topNavs = get_field("topNavs","option");
 	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+    
 		<div class="wrapper wide">
       <div class="flexwrap">
   			<div id="site-logo">
@@ -91,6 +98,11 @@ $topNavs = get_field("topNavs","option");
 
   		</div>
     </div>	
+    <?php if( $on_off == 'on' && $head_ban_copy != '' ) { ?>
+      <div class="alert">
+        <?php echo $head_ban_copy; ?>
+      </div>
+    <?php } ?>
 	</header>
 
 	<?php get_template_part('parts/hero'); ?>

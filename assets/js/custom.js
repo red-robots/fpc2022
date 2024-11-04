@@ -5,6 +5,7 @@
  *	Date Modified: 01.26.2023
  *	Developed by: Lisa DeBona
  */
+
 jQuery(document).ready(function ($) {
   $('#menutoggle').on('click', function (e) {
     e.preventDefault();
@@ -27,7 +28,6 @@ jQuery(document).ready(function ($) {
       crossFade: true
     },
     effect: "fade",
-
     /*  "slide", "fade", "cube", "coverflow" or "flip" */
     pagination: {
       el: '.swiper-pagination',
@@ -39,18 +39,15 @@ jQuery(document).ready(function ($) {
       prevEl: '.swiper-button-prev'
     }
   });
-
   if ($('a.popup').length) {
     $('a.popup').each(function () {
       var target = $(this);
       var link = $(this).attr('href');
-
       if (link.includes('youtu')) {
         target.addClass('video-link');
       }
     });
   }
-
   Fancybox.bind(".popup", {
     Image: {
       Panzoom: {
