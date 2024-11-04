@@ -1331,6 +1331,7 @@ h6{font-size:1rem;font-weight:normal;line-height:1.1}
 #site-logo a,#site-logo img{display:block;width:100%;height:auto;float:left}
 .wrapper{max-width:1200px;width:100%;margin:0 auto;padding-left:15px;padding-right:15px;position:relative}
 .site-header{position:relative;z-index:100}
+.site-header .wrapper{z-index:20}
 .site-header .wrapper{padding-top:0;padding-bottom:0}
 .site-header .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .slider{height:92vh}
@@ -1553,7 +1554,7 @@ section.dec-elders .col h3{font-size:18px;font-weight:normal;line-height:1.2;let
 .footer-widget .widgettext a:hover{opacity:1}
 .footer-widget .social-media{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}
 .footer-widget .social-media a{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;margin:0 5px;font-size:.7rem;line-height:1;text-decoration:none;border-radius:100px;background:#FFF;color:#591929;width:25px;height:25px;opacity:1}
-.alert{width:100%;padding:15px;color:#fff;background-color:#591929;text-align:center;margin-top:-1px;font-size:16px}
+.alert{width:100%;padding:15px;color:#fff;background-color:#591929;text-align:center;margin-top:-1px;font-size:16px;position:relative;z-index:10}
 .alert p{margin:0}
 .alert a{color:#fff}
 @media(min-width:480px){.quick_links .widget{width:50%;padding:20px 15px}
